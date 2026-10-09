@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CompTIA A+ Core 2 (220-1202) - Student B Lab Handout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px auto;
+            max-width: 800px;
+            background-color: #ffffff;
+            color: #333333;
+            padding: 0 20px;
+        }
+        h1, h2, h3 {
+            color: #111111;
+        }
+        /* Style focus indicator for contenteditable blocks */
+        [contenteditable="true"]:focus {
+            outline: 2px solid #005fcc;
+            outline-offset: 4px;
+            background-color: #f4f8fb;
+        }
+        ul, ol {
+            margin-bottom: 20px;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #dddddd;
+            margin: 30px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 12px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        blockquote {
+            background-color: #f9f9f9;
+            border-left: 4px solid #005fcc;
+            margin: 15px 0;
+            padding: 10px 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 contenteditable="true">CompTIA A+ Core 2 (220-1202)</h1>
+    <p contenteditable="true"><strong>Hands-On Lab Program</strong><br><em>STUDENT B — LAB HANDOUT: Client Systems, Recovery &amp; Dual-Boot Specialist</em>[cite: 18]</p>
+
+    <table>
+        <tr>
+            <th contenteditable="true">Field</th>
+            <th contenteditable="true">Details</th>
+        </tr>
+        <tr>
+            <td contenteditable="true">Program</td>
+            <td contenteditable="true">CompTIA A+ Core 2 (220-1202)</td>
+        </tr>
+        <tr>
+            <td contenteditable="true">Schedule</td>
+            <td contenteditable="true">3 hours/day | 4 days/week | 12 weeks</td>
+        </tr>
+        <tr>
+            <td contenteditable="true">Your role</td>
+            <td contenteditable="true">Client systems, OS recovery, dual-boot, and remote access</td>
+        </tr>
+        <tr>
+            <td contenteditable="true">Lab network</td>
+            <td contenteditable="true">VLAN 11 | 172.16.100.x | Gateway: 172.16.100.1</td>
+        </tr>
+        <tr>
+            <td contenteditable="true">Your devices</td>
+            <td contenteditable="true">OptiPlex 3020 #3 (dual-boot) | QCT Pro Tower #1 (primary client) | MacBook Air</td>
+        </tr>
+        <tr>
+            <td contenteditable="true">Shared devices</td>
+            <td contenteditable="true">QCT Pro Tower #2 available for testing</td>
+        </tr>
+        <tr>
+            <td contenteditable="true">Dependency</td>
+            <td contenteditable="true">Student A must have the domain running before you can join it (Phase 2)</td>
+        </tr>
+    </table>
+    <hr>
+
+    <h2 contenteditable="true">How to use this handout</h2>
+    <ul>
+        <li contenteditable="true">Each phase builds on the last. Do not skip ahead[cite: 18].</li>
+        <li contenteditable="true">Every task ends with a Verification Checklist — confirm each item before moving on[cite: 18].</li>
+        <li contenteditable="true">Document everything: IP addresses, commands used, errors, and how you resolved them[cite: 18].</li>
+        <li contenteditable="true">Coordinate with Student A before any task that touches the shared domain or network[cite: 18].</li>
+        <li contenteditable="true">No answers are provided. Use your notes, textbook, and troubleshooting skills[cite: 18].</li>
+    </ul>
+    <hr>
+
+    <h2 contenteditable="true">Phase 1 — OS Installation, Recovery &amp; Dual Boot (Weeks 1–3)</h2>
+    <p contenteditable="true">You are responsible for Windows 10 client installations, understanding Windows RE, and building a dual-boot configuration with Linux. This phase mirrors and extends what Student A is doing — you will eventually swap scenarios to troubleshoot each other's work[cite: 18].</p>
+
+    <h3 contenteditable="true">Lab 1-A: BIOS/UEFI Exploration</h3>
+    <p contenteditable="true"><strong>Your tasks[cite: 18]:</strong></p>
+    <ol>
+        <li contenteditable="true">Boot the OptiPlex 3020 #3 into the BIOS/UEFI setup utility[cite: 18].</li>
+        <li contenteditable="true">Record the current boot order, Secure Boot status, and SATA operation mode[cite: 18].</li>
+        <li contenteditable="true">Boot the QCT Pro Tower #1 into its UEFI as well. Note at least three differences in the UEFI interface between the two machines[cite: 18].</li>
+        <li contenteditable="true">On OptiPlex #3, change the boot order to prioritize USB. Save and exit[cite: 18].</li>
+        <li contenteditable="true">Determine whether each machine uses Legacy BIOS or UEFI and document how you identified this[cite: 18].</li>
+    </ol>
+    <p contenteditable="true"><strong>Think about this[cite: 18]:</strong></p>
+    <ul>
+        <li contenteditable="true">The QCT tower uses an AMD Ryzen 5 processor. Does CPU architecture affect BIOS configuration?[cite: 18]</li>
+        <li contenteditable="true">If Secure Boot is enabled, what happens when you try to boot an unsigned Linux installer?[cite: 18]</li>
+        <li contenteditable="true">What is CSM (Compatibility Support Module) and when might you need to enable or disable it?[cite: 18]</li>
+    </ul>
+    <p contenteditable="true"><strong>Verification checklist[cite: 18]:</strong></p>
+    <ul>
+        <li contenteditable="true">Both machines' firmware settings documented[cite: 18]</li>
+        <li contenteditable="true">Differences between OptiPlex and QCT UEFI noted[cite: 18]</li>
+        <li contenteditable="true">Boot order on OptiPlex #3 changed to USB first[cite: 18]</li>
+    </ul>
+
+    <h3 contenteditable="true">Lab 1-B: Clean Windows 10 Installation — OptiPlex 3020 #3</h3>
+    <p contenteditable="true">Install Windows 10 Pro on OptiPlex 3020 #3. This machine will later run a dual-boot configuration, so partition planning is critical. You must leave unallocated space for Linux[cite: 18].</p>
+    <p contenteditable="true"><strong>Your tasks[cite: 18]:</strong></p>
+    <ol>
+        <li contenteditable="true">Boot from the Windows 10 USB installer. When you reach the partition screen, do not use the full disk. Create a partition of 80 GB for Windows. Leave the remaining space unallocated — do not create a partition there yet[cite: 18].</li>
+        <li contenteditable="true">Complete the Windows installation. Configure a local administrator account[cite: 18].</li>
+        <li contenteditable="true">After the first boot, open Device Manager and resolve any driver issues. Document what was missing and how you fixed it[cite: 18].</li>
+        <li contenteditable="true">Note the Windows version, build number, and edition (Settings > System > About)[cite: 18].</li>
+        <li contenteditable="true">Set a static IP address: 172.16.100.20 / 255.255.255.0. Leave the gateway and DNS blank for now[cite: 18].</li>
+    </ol>
+    <blockquote contenteditable="true">
+        <p><strong>⚠️ Partition planning is permanent[cite: 18]:</strong><br>
+        If you use all the disk space for Windows, you will not be able to create the Linux partition without data loss[cite: 18].<br>
+        Leave at least 40 GB of unallocated space. Verify in Disk Management before proceeding[cite: 18].</p>
+    </blockquote>
+    <p contenteditable="true"><strong>Verification checklist[cite: 18]:</strong></p>
+    <ul>
+        <li contenteditable="true">Windows 10 Pro installed with 80 GB partition[cite: 18]</li>
+        <li contenteditable="true">Unallocated space confirmed in Disk Management[cite: 18]</li>
+        <li contenteditable="true">Device Manager shows no errors[cite: 18]</li>
+        <li contenteditable="true">Static IP 172.16.100.20 configured[cite: 18]</li>
+    </ul>
+
+    <h3 contenteditable="true">Lab 1-C: Clean Windows 10 Installation — QCT Pro Tower #1</h3>
+    <p contenteditable="true"><strong>Your tasks[cite: 18]:</strong></p>
+    <ol>
+        <li contenteditable="true">Install Windows 10 Pro on the QCT Pro Tower #1. Use the full disk — no dual-boot is required on this machine[cite: 18].</li>
+        <li contenteditable="true">After installation, install AMD chipset drivers if needed. Document the driver versions installed[cite: 18].</li>
+        <li contenteditable="true">Set a static IP address: 172.16.100.30 / 255.255.255.0[cite: 18].</li>
+        <li contenteditable="true">Verify that OptiPlex #3 and QCT Tower #1 can ping each other by IP[cite: 18].</li>
+    </ol>
+    <p contenteditable="true"><strong>Verification checklist[cite: 18]:</strong></p>
+    <ul>
+        <li contenteditable="true">Windows 10 Pro installed on QCT Tower #1[cite: 18]</li>
+        <li contenteditable="true">AMD drivers installed if needed[cite: 18]</li>
+        <li contenteditable="true">Static IP 172.16.100.30 configured[cite: 18]</li>
+        <li contenteditable="true">Ping between #3 and Tower #1 successful[cite: 18]</li>
+    </ul>
+
+    <h3 contenteditable="true">Lab 1-D: System Restore Points &amp; Windows RE</h3>
+    <p contenteditable="true">On both of your Windows machines, you will practice creating restore points and using the Windows Recovery Environment. You will also deliberately break a boot configuration and repair it[cite: 18].</p>
+    <p contenteditable="true"><strong>Your tasks — Restore Points[cite: 18]:</strong></p>
+    <ol>
+        <li contenteditable="true">On QCT Tower #1, enable System Protection on C: and create a manual restore point. Name it with today's date[cite: 18].</li>
+        <li contenteditable="true">Make two visible changes to the system (install software, change a setting). Then restore back to your restore point and confirm the changes are undone[cite: 18].</li>
+        <li contenteditable="true">Document: what files and settings does System Restore protect? What does it NOT protect?[cite: 18]</li>
+    </ol>
+    <p contenteditable="true"><strong>Your tasks — Windows RE[cite: 18]:</strong></p>
+    <ol>
+        <li contenteditable="true">On OptiPlex #3, access WinRE using Shift + Restart. Document all available tools in the menu[cite: 18].</li>
+        <li contenteditable="true">Open Command Prompt within WinRE. Run and document: <code>sfc /scannow</code>, <code>bootrec /scanos</code>, <code>bootrec /rebuildbcd</code>[cite: 18].</li>
+        <li contenteditable="true">Simulate a broken boot: with instructor supervision, rename the BCD store on OptiPlex #3 so Windows cannot boot. Then repair it using WinRE tools. Document every step[cite: 18].</li>
+    </ol>
+    <blockquote contenteditable="true">
+        <p><strong>⚠️ Supervised task[cite: 18]:</strong><br>
+        Deliberately breaking the boot record should only be done with your instructor present[cite: 18].<br>
+        Have your USB recovery media ready before you begin[cite: 18].</p>
+    </blockquote>
+    <p contenteditable="true"><strong>Verification checklist[cite: 18]:</strong></p>
+    <ul>
+        <li contenteditable="true">Restore point created and tested on QCT Tower #1[cite: 18]</li>
+        <li contenteditable="true">WinRE tools listed[cite: 18]</li>
+        <li contenteditable="true">Boot repair completed successfully[cite: 18]</li>
+        <li contenteditable="true">All steps documented[cite: 18]</li>
+    </ul>
+
+    <h3 contenteditable="true">Lab 1-E: Dual-Boot Configuration — Windows 10 &amp; Linux</h3>
+    <p contenteditable="true">You will install Ubuntu Linux into the unallocated space on OptiPlex #3 alongside Windows 10. The result will be a working dual-boot system managed by the GRUB bootloader[cite: 18].</p>
+    <p contenteditable="true"><strong>Your tasks[cite: 18]:</strong></p>
+    <ol>
+        <li contenteditable="true">Boot the OptiPlex #3 from a Ubuntu 22.04 LTS USB installer. Choose the Install Ubuntu option[cite: 18].</li>
+        <li contenteditable="true">When asked about installation type, choose Install Ubuntu alongside Windows Boot Manager (or manual partitioning if that option is not shown). Create a Linux partition in the unallocated space you reserved[cite: 18].</li>
+        <li contenteditable="true">Complete the Ubuntu installation. Set a username and password. Do not encrypt the disk[cite: 18].</li>
+        <li contenteditable="true">After reboot, verify that GRUB appears and both Windows 10 and Ubuntu are selectable entries[cite: 18].</li>
+        <li contenteditable="true">Commands: Boot into Ubuntu. Open a terminal and run the following commands. Document the output of each: <code>ip addr</code> | <code>ping 172.16.100.10</code> | <code>uname -a</code> | <code>df -h</code> | <code>sudo apt update</code>[cite: 18].</li>
+        <li contenteditable="true">Boot back into Windows 10 and verify it still loads normally and the partition layout is unchanged[cite: 18].</li>
+    </ol>
+    <p contenteditable="true"><strong>Verification checklist[cite: 18]:</strong></p>
+    <ul>
+        <li contenteditable="true">Ubuntu installed in unallocated space[cite: 18]</li>
+        <li contenteditable="true">GRUB bootloader showing both OS entries[cite: 18]</li>
+        <li contenteditable="true">Ubuntu boots and network connectivity confirmed[cite: 18]</li>
+        <li contenteditable="true">Windows 10 still boots normally[cite: 18]</li>
+        <li contenteditable="true">Linux terminal commands run and documented[cite: 18]</li>
+    </ul>
+
+    <h3 contenteditable="true">Lab 1-F: Dual-Boot Troubleshooting</h3>
+    <p contenteditable="true">You will intentionally break the GRUB bootloader on OptiPlex #3 and then repair it using a live Ubuntu USB. This simulates a common real-world recovery scenario[cite: 18].</p>
+    <p contenteditable="true"><strong>Your tasks[cite: 18]:</strong></p>
+    <ol>
+        <li contenteditable="true">From within Windows 10 on OptiPlex #3, use diskpart or another method to remove the GRUB entry from the boot sequence. Verify that the machine no longer shows the GRUB menu on next boot[cite: 18].</li>
+        <li contenteditable="true">Boot from the Ubuntu live USB. Open a terminal and repair the GRUB installation. Research the correct sequence of commands using chroot[cite: 18].</li>
+        <li contenteditable="true">Reboot and verify GRUB is restored and both OS entries are present[cite: 18].</li>
+        <li contenteditable="true">Document every command you used in sequence. A colleague should be able to follow your notes to repeat the repair[cite: 18].</li>
+    </ol>
+    <p contenteditable="true"><strong>Verification checklist[cite: 18]:</strong></p>
+    <ul>
+        <li contenteditable="true">GRUB successfully removed and confirmed broken[cite: 18]</li>
+        <li contenteditable="true">GRUB repaired using live USB[cite: 18]</li>
+        <li contenteditable="true">Both OS entries restored in boot menu[cite: 18]</li>
+        <li contenteditable="true">Step-by-step repair commands documented[cite: 18]</li>
+    </ul>
+    <hr>
+
+    <h2 contenteditable="true">Phase 2 — Joining the Domain &amp; Network Configuration (Weeks 4–6)</h2>
+    <p contenteditable="true">Student A is building the domain controller. Your role in this phase is to configure your machines as domain clients, join the domain, verify all services work correctly, and connect the MacBook Air to the Windows environment[cite: 18].</p>
+    <blockquote contenteditable="true">
+        <p><strong>⚠️ Coordination required[cite: 18]:</strong><br>
+        You cannot complete any domain join tasks until Student A has the DC operational and DHCP configured[cite: 18].<br>
+        Confirm with Student A before proceeding to Lab 2-B and beyond[cite: 18].<br>
+        The domain name is: lab.local | DC IP: 172.16.100.10 | Lab VLAN: 11 | Lab ports: 7-12 and 31-36 only[cite: 18]</p>
+    </blockquote>
+
+    <h3 contenteditable="true">Lab 2-A: Network Configuration — Domain Client Prep</h3>
+    <p contenteditable="true"><strong>Your tasks[cite: 18]:</strong></p>
+    <ol>
+        <li contenteditable="true">On OptiPlex #3, update the network settings. Set the DNS server to 172.16.100.10 (Student A's DC). Keep the IP at 172.16.100.20[cite: 18].</li>
+        <li contenteditable="true">On QCT Tower #1, update DNS to 172.16.100.10. Keep IP at 172.16.100.30[cite: 18].</li>
+        <li contenteditable="true">Verify that both machines can resolve the domain: open Command Prompt and run <code>nslookup lab.local</code>. It should return DC01's IP[cite: 18].</li>
+        <li contenteditable="true">Run <code>ping dc01</code> and <code>ping dc01.lab.local</code> from both machines. Document the results[cite: 18].</li>
+    </ol>
+    <p contenteditable="true"><strong>Verification checklist[cite: 18]:</strong></p>
+    <ul>
+        <li contenteditable="true">DNS updated to 172.16.100.10 on both machines[cite: 18]</li>
+        <li contenteditable="true"><code>nslookup lab.local</code> returns correct IP[cite: 18]</li>
+        <li contenteditable="true"><code>ping dc01</code> successful from both machines[cite: 18]</li>
+    </ul>
+
+    <h3 contenteditable="true">Lab 2-B: Domain Join — Windows Clients</h3>
+    <p contenteditable="true"><strong>Your tasks[cite: 18]:</strong></p>
+    <ol>
+        <li contenteditable="true">Join OptiPlex #3 to the lab.local domain. Use the credentials Student A created for domain joining. After the reboot, log in with the <code>studentB@lab.local</code> domain account[cite: 18].</li>
+        <li contenteditable="true">Open Active Directory Users and Computers on DC01 (via Remote Server Administration Tools or by logging in at the server). Confirm that OptiPlex #3 appears as a computer object in the Computers container or the Computers OU[cite: 18].</li>
+        <li contenteditable="true">Repeat the domain join for QCT Tower #1. Log in as studentB on that machine too[cite: 18].</li>
+        <li contenteditable="true">Run <code>whoami /all</code> on each joined machine after login. Document the output, particularly the group memberships[cite: 18].</li>
+    </ol>
+    <p contenteditable="true"><strong>Verification checklist[cite: 18]:</strong></p>
+    <ul>
+        <li contenteditable="true">OptiPlex #3 joined to lab.local[cite: 18]</li>
+        <li contenteditable="true">QCT Tower #1 joined to lab.local[cite: 18]</li>
+        <li contenteditable="true">Domain login successful on both machines[cite: 18]</li>
+        <li contenteditable="true">Computer objects visible in Active Directory[cite: 18]</li>
+    </ul>
+
+    <h3 contenteditable="true">Lab 2-C: GPO, Drive Mapping &amp; Permission Testing</h3>
+    <p contenteditable="true">Student A will configure Group Policy Objects and shared folders. Your job is to verify they apply correctly and to test permissions from different accounts[cite: 18].</p>
+    <p contenteditable="true"><strong>Your tasks[cite: 18]:</strong></p>
+    <ol>
+        <li contenteditable="true">After logging in as studentB on OptiPlex #3, run <code>gpupdate /force</code>. Wait for it to complete, then run <code>gpresult /r</code>. Document which GPOs are listed as applied[cite: 18].</li>
+        <li contenteditable="true">Verify that the Z: drive is mapped. Open it and confirm you can read files. Attempt to create a file. Document what happens and why[cite: 18].</li>
+        <li contenteditable="true">Log out and log back in as studentA on the same machine. Check if the permissions on shared folders are different. Document any differences[cite: 18].</li>
+        <li contenteditable="true">Use <code>rsop.msc</code> (Resultant Set of Policy) to view the effective policy for the current user. Take notes on what settings are enforced[cite: 18].</li>
+    </ol>
+    <p contenteditable="true"><strong>Verification checklist[cite: 18]:</strong></p>
+    <ul>
+        <li contenteditable="true"><code>gpresult /r</code> shows expected GPOs applied[cite: 18]</li>
+        <li contenteditable="true">Z: drive visible and access tested[cite: 18]</li>
+        <li contenteditable="true">Permission differences between accounts documented[cite: 18]</li>
+        <li contenteditable="true"><code>rsop.msc</code> reviewed[cite: 18]</li>
+    </ul>
+
+    <h3 contenteditable="true">Lab 2-D: Offline Login &amp; Cached Credentials</h3>
+    <p contenteditable="true"><strong>Your tasks[cite: 18]:</strong></p>
+    <ol>
+        <li contenteditable="true">While logged in as studentB on QCT Tower #1, disconnect the network cable[cite: 18].</li>
+        <li contenteditable="true">Log out and attempt to log back in as studentB. Document whether login succeeds and what Windows displays[cite: 18].</li>
+        <li contenteditable="true">Research and explain: what are cached domain credentials? How many logins are cached by default? How do you change this?[cite: 18]</li>
+        <li contenteditable="true">Reconnect the network cable and verify domain connectivity resumes normally[cite: 18].</li>
+    </ol>
+    <p contenteditable="true"><strong>Verification checklist[cite: 18]:</strong></p>
+    <ul>
+        <li contenteditable="true">Offline login tested and result documented[cite: 18]</li>
+        <li contenteditable="true">Cached credentials behavior explained[cite: 18]</li>
+        <li contenteditable="true">Domain connectivity restored after reconnection[cite: 18]</li>
+    </ul>
+
+    <h3 contenteditable="true">Lab 2-E: Connecting the MacBook Air</h3>
+    <p contenteditable="true">Your MacBook Air must access the lab.local domain environment and the shared folders hosted on DC01[cite: 18].</p>
+    <p contenteditable="true"><strong>Your tasks[cite: 18]:</strong></p>
+    <ol>
+        <li contenteditable="true">Configure the MacBook Air: static IP 172.16.100.41 / 255.255.255.0. DNS: 172.16.100.10. Gateway: 172.16.100.1[cite: 18].</li>
+        <li contenteditable="true">Verify network connectivity: <code>ping dc01</code> and <code>ping dc01.lab.local</code> from the Mac terminal[cite: 18].</li>
+        <li contenteditable="true">Attempt to join the Mac to lab.local using Directory Utility. Research the correct procedure for your macOS version. Document each step and any errors[cite: 18].</li>
+        <li contenteditable="true">If domain join succeeds, log in using the studentB domain account. Verify a home folder is created[cite: 18].</li>
+        <li contenteditable="true">Connect to the Staff shared folder via Finder > Go > Connect to Server. Enter <code>smb://dc01/staff</code>. Test reading a file[cite: 18].</li>
+        <li contenteditable="true">Document: what SMB protocol version does your macOS support? Are there any known compatibility issues with Windows Server?[cite: 18]</li>
+    </ol>
+    <p contenteditable="true"><strong>Verification checklist[cite: 18]:</strong></p>
+    <ul>
+        <li contenteditable="true">Mac network configured and pings DC01[cite: 18]</li>
+        <li contenteditable="true">Mac joined to lab.local (or issues documented)[cite: 18]</li>
+        <li contenteditable="true">SMB share accessible from Finder[cite: 18]</li>
+        <li contenteditable="true">SMB compatibility notes documented[cite: 18]</li>
+    </ul>
+    <hr>
+
+    <h2 contenteditable="true">Phase 3 — Remote Access, VNC &amp; Proxy Client (Weeks 7–9)</h2>
